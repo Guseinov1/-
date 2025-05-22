@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefon Numarası Gir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Telefon Numarasını Gir</h2>
+        <p>Lütfen telefon numaranızı girin:</p>
+        <input type="text" id="phoneNumber" placeholder="Telefon Numarası">
+        <button onclick="submitPhoneNumber()">Gönder</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        function submitPhoneNumber() {
+            var phone = document.getElementById("phoneNumber").value;
+            
+            if (phone === "") {
+                document.getElementById("message").innerHTML = "Lütfen bir telefon numarası girin.";
+                document.getElementById("message").style.color = "red";
+            } else {
+                document.getElementById("message").innerHTML = "Telefon numaranız başarıyla kaydedildi: " + phone;
+                document.getElementById("message").style.color = "green";
+                
+                // Burada numara bir yere kaydedilemez, sadece mesaj gösterilebilir.
+                // Gerçek bir sistemde veritabanı kullanılabilir.
+            }
+        }
+    </script>
+</body>
+</html>
